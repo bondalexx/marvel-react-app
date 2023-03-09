@@ -1,9 +1,8 @@
 import React, {useState , useEffect , useRef} from 'react';
-import PropsTypes from 'prop-types';
 
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
-import useMarvelService from '../../services/MarvelService';
+import useMarvelService from '../../services/useMarvelService';
 
 import './charList.css';
 
@@ -18,6 +17,7 @@ const CharList = (props) => {
 
     useEffect(() => {
         onRequest(offset, true);
+
     }, [])
 
     const onRequest = (offset, initial) => {
@@ -74,7 +74,6 @@ const CharList = (props) => {
                 </li>
             )
         });
-        // А эта конструкция вынесена для центровки спиннера/ошибки
         return (
             <ul className="char__grid">
                 {items}

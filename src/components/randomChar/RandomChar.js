@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import mjolnir from '../../resources/img/mjolnir.png';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
-import useMarvelService from '../../services/MarvelService';
+import useMarvelService from '../../services/useMarvelService';
 import useHttp from '../../hooks/http.hook';
 
 import '../../style/button.css';
