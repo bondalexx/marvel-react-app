@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropsTypes from 'prop-types';
 
-import useMarvelService from '../../services/MarvelService';
+import useMarvelService from '../../services/useMarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Skeleton from '../skeleton/Skeleton';

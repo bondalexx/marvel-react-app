@@ -6,24 +6,24 @@ const useMarvelService = () => {
 
     const _apiBase = 'https://gateway.marvel.com:443/v1/public/';
     const _apiKey = 'b6dce5d22006c13ed7aa5ae8cb6b7ee0';
-    const _hash = '39004ab08cd7926d80cc7dd7d3645ae4';
+    const _hash = '96fb6b73f60973c1391e111db7f63387';
     const _baseOffset = 210;
 
     const getAllCharacters = async (offset = _baseOffset) => {
 		const res = await request(
-			`${_apiBase}characters?limit=9&offset=${offset}&${_apiKey}`
+			`${_apiBase}characters?limit=9&offset=${offset}&apikey=${_apiKey}`
 		);
 		return res.data.results.map(_transformCharacter);
 	};
 
 	const getCharacter = async (id) => {
-		const res = await request(`${_apiBase}characters/${id}?${_apiKey}`);
+		const res = await request(`${_apiBase}characters/${id}?apikey=${_apiKey}`);
 		return _transformCharacter(res.data.results[0]);
 	};
 
 	const getAllComics = async (offset = 0) => {
 		const res = await request(
-			`${_apiBase}comics?orderBy=issueNumber&limit=8&offset=${offset}&${_apiKey}`
+			`${_apiBase}comics?orderBy=issueNumber&limit=8&offset=${offset}&ts=1&apikey=${_apiKey}&hash=${_hash}`
 		);
 		return res.data.results.map(_transformComics);
 	};
